@@ -15,5 +15,15 @@ if __name__ == "__main__":
         name = input()
         names_and_amounts[name] = 0
 
+    # Create an instance of the BillSplitter class passing in the names_and_amounts dictionary
     bill_splitter = BillSplitter(names_and_amounts)
+
+    total_bill_amount = float(input("\nEnter the total bill value:\n"))
+
+    # Set the total bill amount for the bill_splitter instance
+    bill_splitter.set_total_amount(total_bill_amount)
+
+    # Split the bill evenly among all the friends in the names_and_amounts dictionary
+    bill_splitter.split_bill_evenly()
+
     print(f"\n{bill_splitter}\n")
