@@ -29,13 +29,11 @@ if __name__ == "__main__":
     is_lucky = input().lower()
 
     if is_lucky == "yes":
-        lucky_name = random.choice(list(names_and_amounts.keys()))
-        remove_lucky_name = names_and_amounts.pop(lucky_name)
-        print(f"\n{remove_lucky_name} is the lucky one!\n")
+        lucky_name = random.choice(list(bill_splitter.names_and_amounts.keys()))
+        bill_splitter.split_bill_evenly(lucky_name)
+        print(f"\n{lucky_name} is the lucky one!\n")
     else:
         print("\nNo one is going to be lucky\n")
+        bill_splitter.split_bill_evenly()
 
-    # # Split the bill evenly among all the friends in the names_and_amounts dictionary
-    # bill_splitter.split_bill_evenly()
-    #
-    # print(f"\n{bill_splitter}\n")
+    print(f"{bill_splitter}\n")
